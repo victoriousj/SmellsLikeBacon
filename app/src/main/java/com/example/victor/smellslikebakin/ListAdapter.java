@@ -1,4 +1,4 @@
-package com.example.victor.smellslikebacon;
+package com.example.victor.smellslikebakin;
 
 
 import android.support.v7.widget.RecyclerView;

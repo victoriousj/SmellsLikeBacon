@@ -1,4 +1,4 @@
-package com.example.victor.smellslikebacon;
+package com.example.victor.smellslikebakin;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,8 +1,7 @@
-package com.example.victor.smellslikebacon;
+package com.example.victor.smellslikebakin;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 

@@ -1,4 +1,4 @@
-package com.example.victor.smellslikebacon;
+package com.example.victor.smellslikebakin;
 
 import org.junit.Test;
 
