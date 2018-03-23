@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity  implements ListFragment.OnRecipeSelectedInterface{
+public class MainActivity extends AppCompatActivity  implements ListFragment.OnRecipeSelectedInterface {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,6 @@ public class MainActivity extends AppCompatActivity  implements ListFragment.OnR
 
     @Override
     public void onListRecipeSelected(int index) {
-        Toast.makeText(this, Recipes.names[index], Toast.LENGTH_LONG).show();
+        Toast.makeText(this, Recipes.names[index], Toast.LENGTH_SHORT).show();
     }
 }

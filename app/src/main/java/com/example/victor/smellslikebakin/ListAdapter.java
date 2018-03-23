@@ -30,6 +30,7 @@ public class ListAdapter extends RecyclerView.Adapter {
     public int getItemCount() {
         return Recipes.names.length;
     }
+
 private class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     private ImageView mImageView;
     private TextView mTextView;
