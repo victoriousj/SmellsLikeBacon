@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity  implements ListFragment.OnRecipeSelectedInterface {
+public class MainActivity extends LoggingActivity  implements ListFragment.OnRecipeSelectedInterface {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
