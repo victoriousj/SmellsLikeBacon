@@ -11,7 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class ListFragment  extends LoggingFragment {
+public class ListFragment  extends Fragment {
 
     public interface OnRecipeSelectedInterface {
         void onListRecipeSelected(int index);
@@ -20,7 +20,6 @@ public class ListFragment  extends LoggingFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        Log.d(LoggingFragment.TAG, "onCreateView");
         OnRecipeSelectedInterface listener = (OnRecipeSelectedInterface) getActivity();
         View view = inflater.inflate(R.layout.fragment_list, container, false);
 
