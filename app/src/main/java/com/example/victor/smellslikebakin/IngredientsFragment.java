@@ -50,9 +50,7 @@ public class IngredientsFragment extends Fragment {
 
     private void setUpCheckBoxes(String[] ingredients, ViewGroup container, boolean[] checkBoxes) {
         int i = 0;
-
         for(String ingredient : ingredients) {
-
             mCheckboxes[i] = new CheckBox(getActivity());
             mCheckboxes[i].setPadding(8, 16, 8, 16);
             mCheckboxes[i].setTextSize(20f);
