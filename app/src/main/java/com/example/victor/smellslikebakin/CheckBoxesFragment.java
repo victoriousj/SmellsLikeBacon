@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 
-public class IngredientsFragment extends Fragment {
+public class CheckBoxesFragment extends Fragment {
     private static final String KEY_CHECKED_BOXES = "Key_Checked_Boxes";
     private CheckBox[] mCheckboxes;
 
@@ -21,17 +21,23 @@ public class IngredientsFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         int index = getArguments().getInt(ViewPagerFragment.KEY_RECIPE_INDEX);
-        View view = inflater.inflate(R.layout.fragment_ingredients, container, false);
+        boolean isIngredients = getArguments().getBoolean(ViewPagerFragment.KEY_IS_INGREDIENTS);
+        View view = inflater.inflate(R.layout.fragment_checkboxes, container, false);
 
-        LinearLayout linearLayout = view.findViewById(R.id.ingredientsLayout);
-        String[] ingredients = Recipes.ingredients[index].split("`");
-        mCheckboxes = new CheckBox[ingredients.length];
+        LinearLayout linearLayout = view.findViewById(R.id.checkBoxesLayout);
+        String[] contents;
+        if (isIngredients) {
+            contents = Recipes.ingredients[index].split("`");
+        } else {
+            contents = Recipes.directions[index].split("`");
+        }
+        mCheckboxes = new CheckBox[contents.length];
         boolean[] checkBoxes = new boolean[mCheckboxes.length];
         if (savedInstanceState != null
                 && savedInstanceState.getBooleanArray(KEY_CHECKED_BOXES) != null) {
             checkBoxes = savedInstanceState.getBooleanArray(KEY_CHECKED_BOXES);
         }
-        setUpCheckBoxes(ingredients, linearLayout, checkBoxes);
+        setUpCheckBoxes(contents, linearLayout, checkBoxes);
 
         return view;
     }
@@ -48,13 +54,13 @@ public class IngredientsFragment extends Fragment {
         super.onSaveInstanceState(outState);
     }
 
-    private void setUpCheckBoxes(String[] ingredients, ViewGroup container, boolean[] checkBoxes) {
+    private void setUpCheckBoxes(String[] contents, ViewGroup container, boolean[] checkBoxes) {
         int i = 0;
-        for(String ingredient : ingredients) {
+        for(String content : contents) {
             mCheckboxes[i] = new CheckBox(getActivity());
             mCheckboxes[i].setPadding(8, 16, 8, 16);
             mCheckboxes[i].setTextSize(20f);
-            mCheckboxes[i].setText(ingredient);
+            mCheckboxes[i].setText(content);
             container.addView(mCheckboxes[i]);
             if (checkBoxes[i]) {
                 mCheckboxes[i].toggle();
