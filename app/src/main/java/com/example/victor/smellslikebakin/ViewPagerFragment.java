@@ -41,11 +41,8 @@ public class ViewPagerFragment extends Fragment {
             }
 
             @Override
-            public int getCount() {
-                return 2;
-            }
+            public int getCount() {return 2;}
 
-            @Nullable
             @Override
             public CharSequence getPageTitle(int position) {
                 return position == 0 ? "Ingredients" : "Directions";
