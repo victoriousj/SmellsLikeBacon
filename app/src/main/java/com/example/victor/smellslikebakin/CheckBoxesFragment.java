@@ -17,9 +17,7 @@ public abstract class CheckBoxesFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         int index = getArguments().getInt(ViewPagerFragment.KEY_RECIPE_INDEX);
         View view = inflater.inflate(R.layout.fragment_checkboxes, container, false);
 
@@ -32,7 +30,6 @@ public abstract class CheckBoxesFragment extends Fragment {
             checkBoxes = savedInstanceState.getBooleanArray(KEY_CHECKED_BOXES);
         }
         setUpCheckBoxes(contents, linearLayout, checkBoxes);
-
         return view;
     }
 
@@ -63,7 +60,5 @@ public abstract class CheckBoxesFragment extends Fragment {
             }
             i++;
         }
-
-
     }
 }

@@ -1,6 +1,5 @@
 package com.example.victor.smellslikebakin;
 
-
 public class IngredientsFragment extends CheckBoxesFragment {
 
     @Override
